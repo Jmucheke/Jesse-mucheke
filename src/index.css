@@ -1,0 +1,40 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================
+   Autofill Styles: Chrome / Safari / Edge (WebKit)
+   ======================== */
+:root input:-webkit-autofill,
+:root textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #F9FAFB inset; /* backgroundLight */
+  -webkit-text-fill-color: #1F2937 !important;      /* textMainLight */
+  caret-color: #1F2937;
+  transition: background-color 0s;
+}
+
+.dark input:-webkit-autofill,
+.dark textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #0F172A inset; /* backgroundDark */
+  -webkit-text-fill-color: #F9FAFB !important;      /* textMainDark */
+  caret-color: #F9FAFB;
+}
+
+/* ========================
+   Autofill Styles: Firefox (Gecko)
+   ======================== */
+input:-moz-autofill,
+textarea:-moz-autofill {
+  box-shadow: 0 0 0 1000px #F9FAFB inset !important; /* backgroundLight */
+  color: #1F2937 !important;                         /* textMainLight */
+  caret-color: #1F2937;
+  transition: background-color 0s;
+}
+
+.dark input:-moz-autofill,
+.dark textarea:-moz-autofill {
+  box-shadow: 0 0 0 1000px #0F172A inset !important; /* backgroundDark */
+  color: #F9FAFB !important;                         /* textMainDark */
+  caret-color: #F9FAFB;
+}
