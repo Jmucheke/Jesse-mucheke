@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense, lazy } from 'react';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
-import { loadAll } from '@tsparticles/all';
+import { loadSlim } from '@tsparticles/slim';
 import { motion } from 'framer-motion';
-import Lottie from 'lottie-react';
 import animationData from '../assets/data-analytics.json';
 
 
 
 
 const Home = () => {
+  const Lottie = lazy(() => import('lottie-react')); // Lazy load Lottie component
+
 
   const [engineReady, setEngineReady] = useState(false);
   const [isDark, setIsDark] = useState(false);
@@ -30,7 +31,7 @@ const Home = () => {
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-      await loadAll(engine);
+      await loadSlim(engine);
       setEngineReady(true);
     });
   }, []);
@@ -196,7 +197,16 @@ const Home = () => {
 
         {/* Lottie animation */}
         <div className="w-full md:w-1/2 mb-8 md:mb-0 flex justify-center items-center">
-          <Lottie animationData={animationData} loop className="w-full max-w-xs sm:max-w-sm md:max-w-md h-auto object-contain" />
+
+          <Suspense fallback={<div className="text-center">Loading animation...</div>}>
+            <Lottie
+              animationData={animationData}
+              loop
+              className="w-full max-w-xs sm:max-w-sm md:max-w-md h-auto object-contain"
+            />
+          </Suspense>
+
+          {/* <Lottie animationData={animationData} loop className="w-full max-w-xs sm:max-w-sm md:max-w-md h-auto object-contain" /> */}
         </div>
 
       </div>

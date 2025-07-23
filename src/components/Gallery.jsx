@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const images = [
-  '/images/project1.png',
-  '/images/project2.png',
-  '/images/project3.png',
-  '/images/project4.png',
-  '/images/project5.png',
-  '/images/project6.png',
+  '/images/project1.webp',
+  '/images/project2.webp',
+  '/images/project3.webp',
+  '/images/project4.webp',
+  '/images/project5.webp',
+  '/images/project6.webp',
 ];
 
 const Gallery = () => {
@@ -36,6 +36,7 @@ const Gallery = () => {
               <img
                 src={src}
                 alt={`Project ${index + 1}`}
+                loading="lazy"
                 className="w-full h-48 object-cover"
               />
             </motion.div>
@@ -51,6 +52,7 @@ const Gallery = () => {
             <motion.img
               src={selectedImage}
               alt="Preview"
+              loading="lazy"
               className="max-w-full max-h-[90vh] rounded-lg shadow-lg"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}

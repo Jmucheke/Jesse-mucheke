@@ -15,8 +15,7 @@ const skills = [
   { name: 'Tailwind CSS', icon: <SiTailwindcss />, color: 'bg-teal-400' },
   { name: 'Framer Motion', icon: <SiFramer />, color: 'bg-pink-400' },
   { name: 'Chart.js', icon: <SiChartdotjs />, color: 'bg-purple-400' },
-  // { name: 'D3.js', icon: <SiD3dotjs />, color: 'bg-orange-400' },
-  {name: 'JavaScript', icon: <SiJavascript />, color: 'bg-orange-400' },
+  { name: 'JavaScript', icon: <SiJavascript />, color: 'bg-orange-400' },
   { name: 'Node.js', icon: <SiNodedotjs />, color: 'bg-green-600' },
 ];
 
@@ -28,13 +27,13 @@ const cardVariants = {
     transition: {
       delay: i * 0.1,
       type: 'spring',
-      stiffness: 100,
-      damping: 20,
+      stiffness: 70,
+      damping: 15,
     },
   }),
 };
 
-const Skills = () => {
+const Skills = React.memo(() => {
   return (
     <section
       id="skills"
@@ -60,7 +59,9 @@ const Skills = () => {
               variants={cardVariants}
               className={`rounded-lg shadow-md p-6 text-center font-medium text-white ${skill.color} hover:scale-105 transform transition duration-300`}
             >
-              <div className="text-4xl mb-2">{skill.icon}</div>
+              <div className="text-4xl mb-2" title={skill.name} aria-label={skill.name}>
+                {skill.icon}
+              </div>
               {skill.name}
             </motion.div>
           ))}
@@ -68,6 +69,6 @@ const Skills = () => {
       </div>
     </section>
   );
-};
+});
 
 export default Skills;

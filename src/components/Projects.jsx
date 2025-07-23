@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense, lazy } from 'react';
 import { motion } from 'framer-motion';
 import { FaChartBar, FaDatabase, FaArrowRight } from 'react-icons/fa';
-import ProjectModal from './ProjectModal';
+
+const ProjectModal = lazy(() => import('./ProjectModal'));
 
 const projects = [
   {
@@ -35,7 +36,7 @@ const projects = [
     title: 'Statistical Process Control (SPC)',
     description: 'A SQL-based solution that uses control limits to monitor manufacturing process stability.',
     icon: <FaChartBar />,
-    src: '/images/manufacturing.jpg',
+    src: '/images/manufacturing.webp',
     tech: ['SQL', 'Window functions'],
     details: 'Used rolling averages and standard deviation to dynamically calculate UCL and LCL. Flagged production anomalies for quality assurance teams in real time. Promoted consistent product quality and reduced false alarms in manufacturing lines.',
     link: 'https://github.com/Jmucheke/Data_Analysis_Projects/tree/main/evaluating_manufacturing_process',
@@ -44,7 +45,7 @@ const projects = [
     title: 'Fitness Activity Data Analyzer',
     description: 'A Python-based program to analyze and visualize fitness tracker data.',
     icon: <FaChartBar />,
-    src: '/images/project5.png',
+    src: '/images/project5.webp',
     tech: ['Python', 'Numpy', 'Pandas', 'Matplotlib'],
     details: 'Processed hourly step-count data to compute daily performance statistics. Categorized users based on activity levels (concerning, average, excellent). Generated insightful visualizations (bar, pie, bubble, line) to support personalized fitness feedback.',
     link: 'https://github.com/Jmucheke/Data_Analysis_Projects/tree/main/fitness_analysis',
@@ -103,6 +104,7 @@ const Projects = () => {
                   <img
                     src={project.src}
                     alt={project.title}
+                    loading="lazy"
                     className="w-full h-auto max-h-64 object-cover rounded mb-4"
                   />
                 ) : (
