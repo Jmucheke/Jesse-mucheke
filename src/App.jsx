@@ -49,10 +49,7 @@ function App() {
         <SectionLazy id="projects" LazyComponent={Projects} skeletonHeight={400} />
         <SectionLazy id="gallery" LazyComponent={Gallery} skeletonHeight={300} />
         <SectionLazy id="contact" LazyComponent={GetInTouch} skeletonHeight={250} />
-
-        <section id="footer">
-          <Footer />
-        </section>
+        <SectionLazy id="footer" LazyComponent={Footer} skeletonHeight={100} />
       </main>
     </div>
   );
