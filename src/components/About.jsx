@@ -52,6 +52,8 @@ const About = () => {
               I'm a data analyst with a foundation in software engineering and a deep curiosity for solving problems through data. I enjoy working at the intersection of analytics and technology, transforming complex datasets into clear, impactful insights that support informed decision-making.
               <br /><br />
               Skilled in tools like Power BI, SQL, and Python, I bring a blend of analytical thinking and technical adaptability to every challenge. I'm always eager to learn, collaborate with others, and build solutions that make a real difference.
+              <br /><br />
+              When I’m not working on a data project, you’ll likely find me at a piano or playing guitar, it’s how I recharge and keep my mind sharp. That creative outlet helps me refocus and approach problems with fresh perspective.
             </p>
           </motion.div>
         </div>
