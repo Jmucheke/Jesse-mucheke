@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jesse-mucheke.netlify.app/sitemap.xml
