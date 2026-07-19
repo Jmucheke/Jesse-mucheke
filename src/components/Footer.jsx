@@ -21,7 +21,7 @@ const Footer = () => {
     {
       icon: <FaPhone />,
       link: 'tel:+254700827215',
-      title: 'Email',
+      title: 'Phone',
     },
   ];
 
